@@ -1,0 +1,22 @@
+function CCReditUpdate()
+local download = http.get("https://raw.githubusercontent.com/Nightpaw/CCRedit/CCRedit/Redit.lua")
+local handle = download.readAll()
+download.close()
+local file = fs.open("CCRedit/Redit.lua","w")
+file.write(handle)
+file.close()
+end
+function Download()
+local download = http.get("https://raw.githubusercontent.com/Nightpaw/CCRedit/ccredit.lua")
+local handle = download.readAll()
+download.close()
+local file = fs.open("ccredit.lua","w")
+file.write(handle)
+file.close()
+end
+
+print("Installing CCRedit....")
+md("CCRedit")
+Download()
+CCReditUpdate()
+print("Done!")
